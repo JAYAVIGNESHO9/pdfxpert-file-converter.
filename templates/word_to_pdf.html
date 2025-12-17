@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+.container-box {
+    max-width: 550px;
+    margin: 40px auto;
+    padding: 30px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(12px);
+    border-radius: 18px;
+    border: 1px solid rgb(255, 255, 255);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+    text-align: center;
+}
+
+.page-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #be8f00;  /* Visible luxury gold */
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.upload-box {
+    border: 2px dashed #3e3d3d;
+    padding: 40px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    color: #e8e8e8;
+}
+
+.upload-box:hover {
+    background: rgba(0, 85, 255, 0.12);
+    border-color: #c30000;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.upload-icon {
+    font-size: 55px;
+    margin-bottom: 10px;
+    color: #f7e7b7; /* gold */
+}
+
+.upload-box strong {
+    color: #be8f00;
+}
+
+.upload-box p {
+    margin-top: 5px;
+    color: #742d2d; /* silver */
+    opacity: 0.9;
+}
+
+.btn-submit {
+    margin-top: 25px;
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #005bc9);
+    color: rgb(255, 255, 255);  /* visible text */
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-submit:hover {
+    transform: scale(1.03);
+    background: linear-gradient(90deg, #a00404)
+}
+</style>
+
+
+<div class="container-box">
+
+    <h2 class="page-title">Word → PDF</h2>
+
+    <form method="POST" enctype="multipart/form-data">
+
+        <label for="fileUpload">
+            <div class="upload-box">
+                <div class="upload-icon">📄</div>
+                <strong>Click to upload a DOCX file</strong>
+                <p>Only Word files are supported</p>
+            </div>
+        </label>
+
+        <input type="file" name="file" id="fileUpload" accept=".docx" required>
+
+        <button class="btn-submit" type="submit">Convert to PDF</button>
+    </form>
+
+</div>
+
+{% endblock %}

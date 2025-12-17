@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 class="page-title">Merge PDF</h2>
+
+<div class="card">
+    <form action="/merge" method="POST" enctype="multipart/form-data">
+        <div class="input-group">
+            <span>Select PDF files (2 or more)</span>
+            <input type="file" name="files" accept="application/pdf" multiple required>
+        </div>
+
+        <button class="convert-btn" type="submit">Merge PDFs</button>
+    </form>
+</div>
+
+{% endblock %}

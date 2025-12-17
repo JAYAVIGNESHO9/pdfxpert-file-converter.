@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="m-stripes"></div>
+<h2 class="page-title">Dashboard</h2>
+
+<div class="dash-grid">
+
+  <!-- Word to PDF -->
+  <a href="/convert/word" class="dash-card">
+    <img src="{{ url_for('static', filename='icons/word-to-pdf.svg') }}" alt="Word to PDF">
+    <span>Word to PDF</span>
+  </a>
+
+  <!-- PPT to PDF -->
+  <a href="/convert/ppt" class="dash-card">
+    <img src="{{ url_for('static', filename='icons/ppt-to-pdf.svg') }}" alt="PPT to PDF">
+    <span>PPT to PDF</span>
+  </a>
+
+  <!-- Excel to PDF -->
+  <a href="/convert/excel" class="dash-card">
+    <img src="{{ url_for('static', filename='icons/excel-to-pdf.svg') }}" alt="Excel to PDF">
+    <span>Excel to PDF</span>
+  </a>
+
+  <!-- Merge PDFs -->
+  <a href="/merge" class="dash-card">
+    <img src="{{ url_for('static', filename='icons/merge.svg') }}" alt="Merge PDFs">
+    <span>Merge PDFs</span>
+  </a>
+
+  <!-- Split PDF -->
+  <a href="/split" class="dash-card">
+    <img src="{{ url_for('static', filename='icons/split.svg') }}" alt="Split PDF">
+    <span>Split PDF</span>
+  </a>
+
+  <!-- Image to PDF -->
+  <a href="/convert/image" class="dash-card">
+    <img src="{{ url_for('static', filename='icons/jpg-to-pdf.svg') }}" alt="Image to PDF">
+    <span>Image to PDF</span>
+  </a>
+
+</div>
+
+{% endblock %}

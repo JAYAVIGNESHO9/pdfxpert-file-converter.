@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2 class="page-title">Convert Files</h2>
+
+<!-- BMW THREE STRIPES -->
+<div class="m-stripes"></div>
+
+<div class="card convert-card">
+  <form method="post" enctype="multipart/form-data">
+
+    <label class="input-group">
+      <span>Select File</span>
+      <input type="file" name="file" required>
+    </label>
+
+    <fieldset class="fieldset">
+      <legend>Conversion Direction</legend>
+
+      <label class="radio-option">
+        <input type="radio" name="direction" value="to_pdf" checked>
+        Office → PDF
+      </label>
+
+      <label class="radio-option">
+        <input type="radio" name="direction" value="from_pdf">
+        PDF → Office
+      </label>
+    </fieldset>
+
+    <label class="input-group">
+      <span>Target Format (Only for PDF → Office)</span>
+      <select name="target">
+        <option value="docx">DOCX</option>
+        <option value="pptx">PPTX</option>
+        <option value="xlsx">XLSX</option>
+      </select>
+    </label>
+
+    <button type="submit" class="btn convert-btn">Convert</button>
+  </form>
+</div>
+
+{% endblock %}

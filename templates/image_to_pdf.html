@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/image_to_pdf.css') }}">
+
+<h2 class="page-title">Image to PDF</h2>
+
+<form method="POST" enctype="multipart/form-data" class="file-form">
+    <label class="file-label">Select an Image (.jpg, .jpeg, .png):</label>
+    <input type="file" name="file" accept=".jpg,.jpeg,.png" required class="file-input">
+
+    <button type="submit" class="btn">Convert to PDF</button>
+</form>
+
+{% endblock %}

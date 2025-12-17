@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PDFXpert</title>
+
+  <!-- Link to main stylesheet -->
+  <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+
+<body>
+
+  <!-- HEADER with BMW M color theme -->
+  <header class="topbar">
+    <div class="container nav-flex">
+      <a class="brand" href="/">PDFXpert</a>
+
+      <nav class="nav-links">
+        {% if session.username %}
+          <a href="/dashboard">Dashboard</a>
+          <a href="/convert">Convert</a>
+          <a href="/merge">Merge PDF</a>
+          <a href="/split">Split PDF</a>
+          <a href="/logout">Logout ({{ session.username }})</a>
+        {% else %}
+          <a href="/login">Login</a>
+          <a href="/register">Register</a>
+        {% endif %}
+      </nav>
+    </div>
+  </header>
+
+  <!-- Classic BMW M Tri-Color Stripes -->
+  <div class="m-stripes">
+    <div class="stripe stripe-blue"></div>
+    <div class="stripe stripe-purple"></div>
+    <div class="stripe stripe-red"></div>
+  </div>
+
+  <main class="container">
+
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <ul class="flashes">
+        {% for category, msg in messages %}
+          <li class="flash {{ category }}">{{ msg }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    Made by vicky — PDFXpert 
+  </footer>
+
+</body>
+</html>
